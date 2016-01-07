@@ -28,8 +28,9 @@ public class UnknownUserEvaluationHandler {
 				int id = -1;
 				for (EvaluationData evalData : evals.getValue()) {
 					if (evalData.movieId == movie.getKey()) {
+						System.out.print(movie.getKey() + "; ");
 						id = evalData.id;
-						System.out.println(id);
+						//System.out.println(id);
 						break;
 					}
 				}

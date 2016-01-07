@@ -15,12 +15,14 @@ public class MovieAttributesReader {
         LinkedHashMap<Integer,Movie> movieParameters = new LinkedHashMap<Integer,Movie>();
         JSONParser jsonParser = new JSONParser();
         try {
+        	int index = 1;
         	String line = "";
             fileReader = new BufferedReader(new FileReader(fileName));
             while ((line = fileReader.readLine()) != null) {
                 Map movieMap = (Map) jsonParser.parse(line);
                 Movie movie = new Movie(movieMap);
-                movieParameters.put(movie.id, movie);
+                movieParameters.put(index, movie);
+                index++;
             }
         } catch (Exception e) {
             System.out.println("Error in MovieAttributesReader !!!");
